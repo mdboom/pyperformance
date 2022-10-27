@@ -250,8 +250,9 @@ class VenvForBenchmarks(_venv.VirtualEnvironment):
             basereqs = Requirements.from_file(REQUIREMENTS_FILE)
             pyperf_req = basereqs.get('pyperf')
             if not pyperf_req:
-                raise NotImplementedError
-            requirements.specs.append(pyperf_req)
+                requirements.specs.append('git+https://github.com/mdboom/pyperf@925f07b#egg=pyperf')
+            else:
+                requirements.specs.append(pyperf_req)
             # XXX what about psutil?
 
         if not requirements:
