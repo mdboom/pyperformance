@@ -10,5 +10,5 @@ psutil==5.9.5
     # via
     #   -r requirements.in
     #   pyperf
-pyperf==2.6.1
+pyperf @ git+https://github.com/mdboom/pyperf@stats-on-warmups
     # via -r requirements.in
