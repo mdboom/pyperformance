@@ -2,6 +2,7 @@
 
 import os
 import os.path
+import subprocess
 import sys
 import types
 
@@ -241,6 +242,7 @@ class VirtualEnvironment:
 
     def ensure_reqs(self, *reqs, upgrade=True):
         print("Installing requirements into the virtual environment %s" % self.root)
+        subprocess.check_call([self.python, 'setup.py', 'install'], cwd="psutil")
         ec, _, _ = _pip.install_requirements(
             *reqs,
             python=self.python,
