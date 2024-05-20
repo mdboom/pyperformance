@@ -635,7 +635,7 @@ def delta_blue(n):
     chain_test(n)
     projection_test(n)
     codspeed.stop_instrumentation()
-    codspeed.dump_results_at("deltablue".encode("ascii"))
+    codspeed.dump_stats_at("deltablue".encode("ascii"))
 
 
 if __name__ == "__main__":
