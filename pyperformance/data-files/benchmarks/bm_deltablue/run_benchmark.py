@@ -21,6 +21,10 @@ the layout & logic from the original. (Ugh.)
 import pyperf
 
 
+import pytest_codspeed
+import pytest_codspeed._wrapper
+
+
 # The JS variant implements "OrderedCollection", which basically completely
 # overlaps with ``list``. So we'll cheat. :D
 class OrderedCollection(list):
@@ -623,9 +627,14 @@ def change(v, new_value):
 planner = None
 
 
+codspeed = pytest_codspeed._wrapper.get_lib()
+
+
 def delta_blue(n):
+    codspeed.start_instrumentation()
     chain_test(n)
     projection_test(n)
+    codspeed.stop_instrumentation()
 
 
 if __name__ == "__main__":
