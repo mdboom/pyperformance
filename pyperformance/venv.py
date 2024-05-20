@@ -253,7 +253,7 @@ class VenvForBenchmarks(_venv.VirtualEnvironment):
         # Every benchmark must depend on pyperf.
         if bench is not None and not requirements.get('pyperf'):
             basereqs = Requirements.from_file(REQUIREMENTS_FILE)
-            pyperf_req = basereqs.get('pyperf')
+            pyperf_req = "git+https://github.com/mdboom/pyperf@codspeed#egg=pyperf" # basereqs.get('pyperf')
             if not pyperf_req:
                 raise NotImplementedError
             requirements.specs.append(pyperf_req)
