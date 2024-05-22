@@ -213,7 +213,7 @@ def get_compatibility_id(bench=None):
 
 
 def get_pyperf_opts(options):
-    opts = []
+    opts = ['--loops', '1', '--warmups', '0']
 
     if options.debug_single_value:
         opts.append('--debug-single-value')
