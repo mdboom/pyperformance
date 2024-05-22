@@ -1,6 +1,7 @@
 from collections import namedtuple
 import hashlib
 import json
+import os
 import sys
 import time
 import traceback
@@ -124,6 +125,9 @@ def run_benchmarks(should_run, python, options):
         venvs.add(venv_root)
         benchmarks[bench] = (venv, bench_runid)
     print()
+
+    if os.environ.get("PYPERFORMANCE_VENV") == "1":
+        sys.exit(0)
 
     suite = None
     run_count = str(len(to_run))
