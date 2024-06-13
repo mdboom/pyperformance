@@ -14,6 +14,7 @@ OLD_SETUPTOOLS = '18.5'
 
 def get_pkg_name(req):
     """Return the name of the package in the given requirement text."""
+    req = req.partition('@')[0].strip()
     # strip env markers
     req = req.partition(';')[0]
     # strip version

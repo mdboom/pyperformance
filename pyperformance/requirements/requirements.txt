@@ -10,5 +10,5 @@ psutil==5.9.5
     # via
     #   -r requirements.in
     #   pyperf
-pyperf==2.7.0
+pyperf @ git+https://github.com/psf/pyperf@7b9a23adb3ceeb182f58a03e453158dbe081a7e7
     # via -r requirements.in
