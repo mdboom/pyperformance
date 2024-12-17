@@ -16,7 +16,7 @@ def create_recursive_containers(n_levels):
     return current_list
 
 
-def benchamark_collection(loops, n_levels):
+def benchmark_collection(loops, n_levels):
     total_time = 0
     all_cycles = create_recursive_containers(n_levels)
     for _ in range(loops):
@@ -32,6 +32,6 @@ def benchamark_collection(loops, n_levels):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=2)
     runner.metadata["description"] = "GC traversal benchmark"
-    runner.bench_time_func("gc_traversal", benchamark_collection, N_LEVELS)
+    runner.bench_time_func("gc_traversal", benchmark_collection, N_LEVELS)

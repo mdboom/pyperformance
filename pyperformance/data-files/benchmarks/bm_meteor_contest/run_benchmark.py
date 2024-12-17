@@ -210,7 +210,7 @@ def bench_meteor_contest(loops, board, pieces, solve_arg, fps, se_nh):
 
 
 def main():
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=2)
     runner.metadata['description'] = "Solver for Meteor Puzzle board"
 
     board, cti, pieces = get_puzzle(WIDTH, HEIGHT)
