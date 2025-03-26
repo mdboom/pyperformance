@@ -132,7 +132,7 @@ def bench_mako(runner, table_size, nparagraph, img_count):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=7)
     runner.metadata['description'] = "Mako templates"
     runner.metadata['mako_version'] = mako.__version__
 

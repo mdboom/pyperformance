@@ -117,7 +117,7 @@ def bench_sphinx(loops, doc_root):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=4)
 
     runner.metadata["description"] = (
         "Render documentation with Sphinx, like the CPython docs"

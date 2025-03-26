@@ -25,6 +25,6 @@ def bench_tomli_loads(loops: int) -> float:
     return pyperf.perf_counter() - t0
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=30)
     runner.metadata['description'] = "Benchmark tomli.loads()"
     runner.bench_time_func('tomli_loads', bench_tomli_loads)

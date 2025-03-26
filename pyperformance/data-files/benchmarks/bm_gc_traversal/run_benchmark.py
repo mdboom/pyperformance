@@ -32,6 +32,6 @@ def benchamark_collection(loops, n_levels):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=2)
     runner.metadata["description"] = "GC traversal benchmark"
     runner.bench_time_func("gc_traversal", benchamark_collection, N_LEVELS)

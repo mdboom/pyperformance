@@ -7,7 +7,7 @@ import pyperf
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=2)
 
     runner.metadata['description'] = "Performance of the Python 2to3 program"
     args = runner.parse_args()

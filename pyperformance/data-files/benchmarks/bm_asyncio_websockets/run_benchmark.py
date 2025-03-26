@@ -43,6 +43,6 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=8)
     runner.metadata['description'] = "Benchmark asyncio websockets"
     runner.bench_async_func('asyncio_websockets', main)

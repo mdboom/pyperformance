@@ -52,7 +52,7 @@ def add_parser_args(parser):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args)
+    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args, processes=30)
     runner.metadata["description"] = "NetworkX benchmark"
     add_parser_args(runner.argparser)
     args = runner.parse_args()

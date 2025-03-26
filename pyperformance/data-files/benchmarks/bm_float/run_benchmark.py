@@ -53,7 +53,7 @@ def benchmark(n):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=8)
     runner.metadata['description'] = "Float benchmark"
 
     points = POINTS

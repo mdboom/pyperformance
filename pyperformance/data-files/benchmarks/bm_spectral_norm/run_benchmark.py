@@ -67,7 +67,7 @@ def bench_spectral_norm(loops):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=30)
     runner.metadata['description'] = (
         'MathWorld: "Hundred-Dollar, Hundred-Digit Challenge Problems", '
         'Challenge #3.')

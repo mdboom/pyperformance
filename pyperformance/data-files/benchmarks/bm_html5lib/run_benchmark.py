@@ -19,7 +19,7 @@ def bench_html5lib(html_file):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=5)
     runner.metadata['description'] = (
         "Test the performance of the html5lib parser.")
     runner.metadata['html5lib_version'] = html5lib.__version__

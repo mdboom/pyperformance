@@ -28,7 +28,7 @@ def add_cmdline_args(cmd, args):
 
 
 def main():
-    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args)
+    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args, processes=30)
     runner.argparser.add_argument("--cases",
                                   help="Comma separated list of cases. Available cases: %s. By default, run all cases."
                                        % ', '.join(CASES))

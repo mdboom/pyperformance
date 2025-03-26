@@ -1784,7 +1784,7 @@ def bench_regex_v8(loops):
 
 
 if __name__ == '__main__':
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=2)
     runner.metadata['description'] = ("Test the performance of regexps "
                                       "using V8's benchmarks")
     runner.bench_time_func('regex_v8', bench_regex_v8)

@@ -59,6 +59,6 @@ def benchamark_collection(loops, cycles, links):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=5)
     runner.metadata["description"] = "GC link benchmark"
     runner.bench_time_func("create_gc_cycles", benchamark_collection, CYCLES, LINKS)

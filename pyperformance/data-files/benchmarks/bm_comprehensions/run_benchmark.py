@@ -90,6 +90,6 @@ def bench_comprehensions(loops: int) -> float:
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=10)
     runner.metadata["description"] = "Benchmark comprehensions"
     runner.bench_time_func("comprehensions", bench_comprehensions)

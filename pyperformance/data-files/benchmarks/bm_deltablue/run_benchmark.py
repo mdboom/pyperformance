@@ -629,7 +629,7 @@ def delta_blue(n):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=4)
     runner.metadata['description'] = "DeltaBlue benchmark"
 
     n = 100

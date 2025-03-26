@@ -95,7 +95,7 @@ def bench_json_loads(objs):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=10)
     runner.metadata['description'] = "Benchmark json.loads()"
 
     json_dict = json.dumps(DICT)

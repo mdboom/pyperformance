@@ -49,6 +49,6 @@ def fannkuch(n):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=9)
     arg = DEFAULT_ARG
     runner.bench_func('fannkuch', fannkuch, arg)

@@ -57,7 +57,7 @@ def add_cmdline_args(cmd, args):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args)
+    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args, processes=2)
 
     cmd = runner.argparser
     cmd.add_argument("--digits", type=int, default=DEFAULT_DIGITS,

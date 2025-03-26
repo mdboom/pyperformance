@@ -46,7 +46,7 @@ def bench_docutils(loops, doc_root):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=8)
 
     runner.metadata['description'] = "Render documentation with Docutils"
     args = runner.parse_args()

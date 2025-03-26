@@ -140,7 +140,7 @@ def add_cmdline_args(cmd, args):
 
 
 if __name__ == '__main__':
-    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args)
+    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args, processes=7)
     runner.metadata['description'] = "n-body benchmark"
     runner.argparser.add_argument("--iterations",
                                   type=int, default=DEFAULT_ITERATIONS,

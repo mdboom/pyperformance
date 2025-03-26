@@ -657,7 +657,7 @@ def bench_pyflake(loops, filename):
 
 
 if __name__ == '__main__':
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=6)
     runner.metadata['description'] = "Pyflate benchmark"
 
     filename = os.path.join(os.path.dirname(__file__),

@@ -39,7 +39,7 @@ def bench_pyaes(loops):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=6)
     runner.metadata['description'] = ("Pure-Python Implementation "
                                       "of the AES block-cipher")
     runner.bench_time_func('crypto_pyaes', bench_pyaes)

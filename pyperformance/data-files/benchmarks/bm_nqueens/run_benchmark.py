@@ -55,7 +55,7 @@ def bench_n_queens(queen_count):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=6)
     runner.metadata['description'] = "Simple, brute-force N-Queens solver"
 
     queen_count = 8

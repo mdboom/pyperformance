@@ -16,7 +16,7 @@ def iter_all_commits(repo):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=9)
     runner.metadata['description'] = ("Dulwich benchmark: "
                                       "iterate on all Git commits")
 

@@ -50,7 +50,7 @@ BENCHMARKS = {
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args)
+    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args, processes=10)
     runner.metadata['description'] = "Render a template using Genshi module"
     runner.argparser.add_argument("benchmark", nargs='?',
                                   choices=sorted(BENCHMARKS))

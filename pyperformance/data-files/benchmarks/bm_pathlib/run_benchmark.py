@@ -63,7 +63,7 @@ def bench_pathlib(loops, tmp_path):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=30)
     runner.metadata['description'] = ("Test the performance of "
                                       "pathlib operations.")
 

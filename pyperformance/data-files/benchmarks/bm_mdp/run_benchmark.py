@@ -262,6 +262,6 @@ def bench_mdp(loops):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=13)
     runner.metadata['description'] = "MDP benchmark"
     runner.bench_time_func('mdp', bench_mdp)

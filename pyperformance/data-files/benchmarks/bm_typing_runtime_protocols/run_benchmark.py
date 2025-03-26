@@ -172,7 +172,7 @@ def bench_protocols(loops: int) -> float:
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=30)
     runner.metadata["description"] = (
         "Test the performance of isinstance() checks "
         "against runtime-checkable protocols"

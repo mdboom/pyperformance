@@ -152,6 +152,6 @@ def bench_bpe_tokeniser(loops: int) -> float:
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=8)
     runner.metadata["description"] = "Benchmark a BPE tokeniser"
     runner.bench_time_func("bpe_tokeniser", bench_bpe_tokeniser)

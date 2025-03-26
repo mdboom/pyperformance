@@ -14,7 +14,7 @@ p = PrettyPrinter()
 
 
 if __name__ == '__main__':
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=13)
     runner.metadata['description'] = 'pprint benchmark'
 
     if hasattr(p, '_safe_repr'):

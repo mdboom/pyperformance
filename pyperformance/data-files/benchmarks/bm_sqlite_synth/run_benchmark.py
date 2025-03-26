@@ -52,6 +52,6 @@ def bench_sqlite(loops):
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=30)
     runner.metadata['description'] = "Benchmark Python aggregate for SQLite"
     runner.bench_time_func('sqlite_synth', bench_sqlite)

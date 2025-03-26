@@ -24,6 +24,6 @@ def bench_coverage(loops: int) -> None:
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=14)
     runner.metadata['description'] = "Benchmark coverage"
     runner.bench_time_func('coverage', bench_coverage)

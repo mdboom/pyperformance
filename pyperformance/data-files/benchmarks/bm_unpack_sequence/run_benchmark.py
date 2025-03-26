@@ -439,7 +439,7 @@ if __name__ == "__main__":
     benchmarks = {"tuple": bench_tuple_unpacking,
                   "list": bench_list_unpacking}
 
-    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args)
+    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args, processes=5)
     runner.metadata['description'] = ("Microbenchmark for "
                                       "Python's sequence unpacking.")
 

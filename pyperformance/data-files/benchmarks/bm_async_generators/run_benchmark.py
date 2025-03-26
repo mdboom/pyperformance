@@ -40,6 +40,6 @@ async def bench_async_generators() -> None:
         pass
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=5)
     runner.metadata['description'] = "Benchmark async generators"
     runner.bench_async_func('async_generators', bench_async_generators)

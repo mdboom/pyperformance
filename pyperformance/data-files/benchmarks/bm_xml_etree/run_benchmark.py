@@ -219,7 +219,7 @@ if __name__ == "__main__":
     # to xml.etree.ElementTree
     default_etmodule = "xml.etree.ElementTree"
 
-    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args)
+    runner = pyperf.Runner(add_cmdline_args=add_cmdline_args, processes=16)
     runner.metadata['description'] = ("Test the performance of "
                                       "ElementTree XML processing.")
 

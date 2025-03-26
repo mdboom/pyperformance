@@ -452,6 +452,6 @@ def versus_cpu():
 
 
 if __name__ == "__main__":
-    runner = pyperf.Runner()
+    runner = pyperf.Runner(processes=6)
     runner.metadata['description'] = "Test the performance of the Go benchmark"
     runner.bench_func('go', versus_cpu)

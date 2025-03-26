@@ -64,7 +64,7 @@ def add_cmdline_args(cmd, args):
 
 
 if __name__ == '__main__':
-    runner = Runner(add_cmdline_args=add_cmdline_args)
+    runner = Runner(add_cmdline_args=add_cmdline_args, processes=5)
     parser = runner.argparser
     parser.add_argument('--ssl', action='store_true', default=False)
     args = runner.parse_args()
