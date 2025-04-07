@@ -58,9 +58,11 @@ def get_loops_from_file(filename):
     loops = {}
     for benchmark in data["benchmarks"]:
         metadata = benchmark.get("metadata", data["metadata"])
-        name = metadata["name"]
-        if name.endswith("_none"):
-            name = name[:-len("_none")]
+        name = metadata.get("benchmark_name")
+        if name is None:
+            name = metadata["name"]
+            if name.endswith("_none"):
+                name = name[:-len("_none")]
         if "loops" in metadata:
             loops[name] = metadata["loops"]
 
@@ -148,7 +150,8 @@ def run_benchmarks(should_run, python, options):
             for res in results:
                 res.update_metadata({
                     'performance_version': version,
-                    'tags': bench.tags
+                    'tags': bench.tags,
+                    'benchmark_name': bench.name,
                 })
 
                 if dest_suite is not None:
@@ -158,7 +161,9 @@ def run_benchmarks(should_run, python, options):
 
             return dest_suite
 
+        print(name, loops.keys())
         if name in loops:
+            print("Using loops from file: %s" % loops[name])
             pyperf_opts.append(f"--loops={loops[name]}")
 
         bench_venv, bench_runid = benchmarks.get(bench)
